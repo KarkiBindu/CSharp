@@ -135,4 +135,65 @@ Understanding C# from basics
     - Constructors are used to initialize class fields and they can be overloaded by the number and types of parameter
     - Constructors are mandatory, if not provided code will genertae parameter less constructor by default
     
+    16. <b> Static and non-static members of class</b> :
+    - Static members have static keyword whereas non-static members does not have static keyword
+    - Static members can be easily invoked using class name without using object but to invoke non-static members object of the class is required
+    - Static members always remains the same but non-static members belongs to specific instance only. i.e. there will always be one static members no matter how many objects are created but there non-static members will be equal to the instance of the class
+    - Static constructor are called only once during whole program run and they are called before instance constructor
+    
+17. <b>Inheritance</b> :
+    - It allows code reuse, which redces time and errors
+    - The common fields and properties are defined in the base class and derived class can se it without defining it in it
+    - Base classes are automatically instantiated before derived class
+    - Parent class constructors executes before child class constructor
+    
+18. <b>Method hiding </b> :
+    - If the base class and derived class have same method name and instance of derived class is made then it will hide the base method. i.e. the method of the base class will not be called.
+    - If the hiding is intentional then use new keyword for the method
+    - To call the base method we can use base keyword or cast derived class to base class and invoke hidden member
+    
+19. <b> Polymorphism</b> :
+    - It allows to invoke derived class methods through a base class reference during runtime
+    - To allow this base class must have virtual methods which are then overriden by the derived class
+    - Virtual keyword indidcates that a method can be overridden in any derived class
+    
+20.<b> Method overriding vs Method hiding </b>
+    - Say base and derived class both have same print function: </br> Baceclass instance = new DerivedClass();</br> instance.Print();
+    - If the function is hidden then the print method of base class is invoked
+    - If the function is overriding then method of the derived class will be invoked
+    
+21. <b>Function/Method Overloading </b>
+     - It allows class to have multiple methods with the same name but with different signature.
+     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
+     - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
+     - Functions' cannot be pverloaded based on return type and params modifiers
+     
+22.<b>Encapsulation</b> :
+    - Making fields public will make lose the control of what gets assigned and returned
+    - Properties are used for encapsulation
+    - There are four types of properties:
+       - Read/write properties: it has both get and set accesor            
+       - Readonly properties : it has get accesor only
+       - Writeonly properties : it has set accesor only
+       - Autoimplemented properties: get and set does not have statement
+       - Example: </br> private int _id;</br> public int Id{get; set;}//auto implemented property
+       
+23. <b>Struct </b> :
+    - Just like classes struct can have private fields, public properties, constructors and methods
+    - Structs are value type whereas classes are reference type
+    - Structs cannot have destructors
+    - Structs cannot have parameterless constructors
+    - Structs cannot inherit from another class but can inherit from interface
+    - structs cannot be sed as base to form derived class/structs
+    - Syntax: </br> access-modifier struct structName</br>{}
+    
+24. <b> Interfaces</b>
+    - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
+    - It is complie time error to provide implementations for any interface members
+    - Interface members are public by default and the do not allow wxplicit access modifiers.
+    - It cannot contains fields
+    - Class oe structs derived from interface must provide implementation for all interface members
+    - Instance of interface cannot be created but interface reference variable can point to a derived class similar to polymorphism described
+    - I is prefixed infornt of the name of interfaces 
+    
 
