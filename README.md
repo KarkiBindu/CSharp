@@ -205,5 +205,9 @@ Understanding C# from basics
     - A non-abstract class derived from the abstract class must have all metjods implementation in it
     
 24. <b> Delegates </b> :
-    - It is a reference type type-safe function pointer
+    - It is a reference type type-safe(i.e it holds reference to a function) function pointer
+    - Syntax: </br> To declare delegate: <i> access-modifier delegate return-type DelegateName(parametersofFunction);</i> </br> To Instantiate delegate: <i> DelegateName variableName = new DelegateName(FunctionName);</i> </br> To Call : <i> varibaleName(parametersofFunction); 
+    - Signature of function and delegates must match i.e parameters of function and return type
+    - It is mostly used to make framework
+    - It is used to make classes flexible; a class can be modified without changing its entire logic
 
