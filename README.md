@@ -151,3 +151,8 @@ Understanding C# from basics
     - If the base class and derived class have same method name and instance of derived class is made then it will hide the base method. i.e. the method of the base class will not be called.
     - If the hiding is intentional then use new keyword for the method
     - To call the base method we can use base keyword or cast derived class to base class and invoke hidden member
+    
+19. <b> Polymorphism</b> :
+    - It allows to invoke derived class methods through a base class reference during runtime
+    - To allow this base class must have virtual methods which are then overriden by the derived class
+    - Virtual keyword indidcates that a method can be overridden in any derived class
