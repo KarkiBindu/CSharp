@@ -16,7 +16,7 @@ namespace practice.Inheritance
         protected double _area;
         #endregion
 
-        #region Encapsulation
+        #region Encapsulation// read and write property
         public double Radius
         {
             set
