@@ -168,4 +168,30 @@ Understanding C# from basics
      - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
      - Functions' cannot be pverloaded based on return type and params modifiers
      
-22.<b>
+22.<b>Encapsulation</b> :
+    - Making fields public will make lose the control of what gets assigned and returned
+    - Properties are used for encapsulation
+    - There are four types of properties:
+       - Read/write properties: it has both get and set accesor            
+       - Readonly properties : it has get accesor only
+       - Writeonly properties : it has set accesor only
+       - Autoimplemented properties: get and set does not have statement
+       - Example: </br> private int _id;</br> public int Id{get; set;}//auto implemented property
+       
+23. <b>Struct </b> :
+    - Just like classes struct can have private fields, public properties, constructors and methods
+    - Structs are value type whereas classes are reference type
+    - Structs cannot have destructors
+    - Structs cannot have parameterless constructors
+    - Structs cannot inherit from another class but can inherit from interface
+    - structs cannot be sed as base to form derived class/structs
+    - Syntax: </br> access-modifier struct structName</br>{}
+    
+24. <b> Interfaces</b>
+    - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
+    - It is complie time error to provide implementations for any interface members
+    - Interface members are public by default and the do not allow wxplicit access modifiers.
+    - It cannot contains fields
+    - Class oe structs derived from interface must provide implementation for all interface members
+    - Instance of interface cannot be created but interface reference variable can point to a derived class similar to polymorphism described
+    - I is prefixed infornt of the name of interfaces 
