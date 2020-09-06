@@ -156,3 +156,16 @@ Understanding C# from basics
     - It allows to invoke derived class methods through a base class reference during runtime
     - To allow this base class must have virtual methods which are then overriden by the derived class
     - Virtual keyword indidcates that a method can be overridden in any derived class
+    
+20.<b> Method overriding vs Method hiding </b>
+    - Say base and derived class both have same print function: </br> Baceclass instance = new DerivedClass();</br> instance.Print();
+    - If the function is hidden then the print method of base class is invoked
+    - If the function is overriding then method of the derived class will be invoked
+    
+ 21. <b>Function/Method Overloading </b>
+     - It allows class to have multiple methods with the same name but with different signature.
+     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
+     - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
+     - Functions' cannot be pverloaded based on return type and params modifiers
+     
+22.<b>
