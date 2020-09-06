@@ -152,23 +152,23 @@ Understanding C# from basics
     - If the hiding is intentional then use new keyword for the method
     - To call the base method we can use base keyword or cast derived class to base class and invoke hidden member
     
-17. <b> Polymorphism</b> :
+17. <b> Polymorphism </b> :
     - It allows to invoke derived class methods through a base class reference during runtime
     - To allow this base class must have virtual methods which are then overriden by the derived class
     - Virtual keyword indidcates that a method can be overridden in any derived class
     
-18.<b> Method overriding vs Method hiding </b>
+18. <b> Method overriding vs Method hiding </b> :
     - Say base and derived class both have same print function: </br> Baceclass instance = new DerivedClass();</br> instance.Print();
     - If the function is hidden then the print method of base class is invoked
     - If the function is overriding then method of the derived class will be invoked
     
-19. <b>Function/Method Overloading </b>
+19. <b> Function/Method Overloading </b> :
     - It allows class to have multiple methods with the same name but with different signature.
     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
     - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
     - Functions' cannot be pverloaded based on return type and params modifiers
      
-20.<b>Encapsulation</b> :
+20. <b>Encapsulation</b> :
     - Making fields public will make lose the control of what gets assigned and returned
     - Properties are used for encapsulation
     - There are four types of properties:
@@ -187,7 +187,7 @@ Understanding C# from basics
     - structs cannot be sed as base to form derived class/structs
     - Syntax: </br> access-modifier struct structName</br>{}
     
-22. <b> Interfaces</b>
+22. <b> Interfaces</b> :
     - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
     - It is complie time error to provide implementations for any interface members
     - Interface members are public by default and the do not allow wxplicit access modifiers.
