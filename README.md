@@ -165,7 +165,7 @@ Understanding C# from basics
 19. <b> Function/Method Overloading </b> :
     - It allows class to have multiple methods with the same name but with different signature.
     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
-    - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
+    - Example:</br> public void Sum(int a, int b,out int sum)</br>{ //body }</br>public void Sum(doble a, double b)</br>{}
     - Functions' cannot be pverloaded based on return type and params modifiers
      
 20. <b>Encapsulation</b> :
@@ -185,7 +185,7 @@ Understanding C# from basics
     - Structs cannot have parameterless constructors
     - Structs cannot inherit from another class but can inherit from interface
     - structs cannot be sed as base to form derived class/structs
-    - Syntax: </br> access-modifier struct structName</br>{}
+    - Syntax: </br> access-modifier struct structName</br>{ //body }
     
 22. <b> Interfaces</b> :
     - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
@@ -195,5 +195,15 @@ Understanding C# from basics
     - Class oe structs derived from interface must provide implementation for all interface members
     - Instance of interface cannot be created but interface reference variable can point to a derived class similar to polymorphism described
     - I is prefixed infornt of the name of interfaces 
+    - If a class/struct inherits from from two interfaces with same method then the methods can be implemented explicitly to stop ambiguity
+    - If both I1 and I2 interface have same print method with void return type that a class inherited then it is implemented explicitly as </br><i>void I1.Print(){}</i>
     
+23. <b> Abstract Classes </b> :
+    - It is incomplete and hence cannot be instantiated but used as base class only
+    - It cannot be sealed; i.e. stop from being derived
+    - It can have implementation for some of its members unlike interface and can have fields, access modifiers
+    - A non-abstract class derived from the abstract class must have all metjods implementation in it
+    
+24. <b> Delegates </b> :
+    - It is a reference type type-safe function pointer
 
