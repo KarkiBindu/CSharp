@@ -163,10 +163,10 @@ Understanding C# from basics
     - If the function is overriding then method of the derived class will be invoked
     
 19. <b>Function/Method Overloading </b>
-     - It allows class to have multiple methods with the same name but with different signature.
-     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
-     - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
-     - Functions' cannot be pverloaded based on return type and params modifiers
+    - It allows class to have multiple methods with the same name but with different signature.
+    - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
+    - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
+    - Functions' cannot be pverloaded based on return type and params modifiers
      
 20.<b>Encapsulation</b> :
     - Making fields public will make lose the control of what gets assigned and returned
