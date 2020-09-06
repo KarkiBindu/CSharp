@@ -1,0 +1,13 @@
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.exe
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.deps.json
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.runtimeconfig.json
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.runtimeconfig.dev.json
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.dll
+F:\fun\practice\WindowsFormsApp\bin\Release\netcoreapp3.1\WindowsFormsApp.pdb
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.csprojAssemblyReference.cache
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.csproj.CoreCompileInputs.cache
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.AssemblyInfoInputs.cache
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.AssemblyInfo.cs
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.dll
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.pdb
+F:\fun\practice\WindowsFormsApp\obj\Release\netcoreapp3.1\WindowsFormsApp.genruntimeconfig.cache

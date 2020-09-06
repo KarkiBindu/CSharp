@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice", "practice\practice.csproj", "{0CFF2933-A3F5-44E5-A0B9-0B52E6E24913}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{C1C3F64A-2D3A-4FE9-971D-57572DB2EE99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CFF2933-A3F5-44E5-A0B9-0B52E6E24913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFF2933-A3F5-44E5-A0B9-0B52E6E24913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFF2933-A3F5-44E5-A0B9-0B52E6E24913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFF2933-A3F5-44E5-A0B9-0B52E6E24913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C3F64A-2D3A-4FE9-971D-57572DB2EE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C3F64A-2D3A-4FE9-971D-57572DB2EE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C3F64A-2D3A-4FE9-971D-57572DB2EE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C3F64A-2D3A-4FE9-971D-57572DB2EE99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63110912-D5EC-4284-8DA1-7A0D6EDCB8C7}
+	EndGlobalSection
+EndGlobal
