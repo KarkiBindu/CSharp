@@ -217,4 +217,15 @@ Understanding C# from basics
     - All the functions pointed by multicast delegates are invoked but if the delgates have return value then the value of the last invoked method is returned
     - \+ or += registers a method to a delegate
     - \- or -= unregisters a method to a delegate
+    
+26. <b> Exception handling </b> :
+    - An unforseen error that occurs while running program is called exception
+    - If such errors are not handled then program will crash and stop working
+    - We can use try, catch, finally to handle these errors
+    - Syntax: </br> try</br> {</br> // it has code that can cause error </br>}</br> catch(Exception e)</br>{</br> //code to handle thrown exception</br>}</br>finally</br>{</br>//code to clean and free resources</br>}
+    - finally block is optional
+    - Pre-defiend specific exception must be handled first before general exception
+    -<b><i>Inner Exception</i></b>: it returns the instance that caused the current exception
+    - Custom Exceptions can also be created
+   
 
