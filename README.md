@@ -1,5 +1,6 @@
 # CSharp
-Understanding C# from basics
+Understanding C# from basics with kudvenkat Tutorial
+Source : 
 
 1. <b>Namespaces</b> :
 
@@ -225,7 +226,22 @@ Understanding C# from basics
     - Syntax: </br> try</br> {</br> // it has code that can cause error </br>}</br> catch(Exception e)</br>{</br> //code to handle thrown exception</br>}</br>finally</br>{</br>//code to clean and free resources</br>}
     - finally block is optional
     - Pre-defiend specific exception must be handled first before general exception
-    -<b><i>Inner Exception</i></b>: it returns the instance that caused the current exception
+    - <b><i>Inner Exception</i></b>: it returns the instance that caused the current exception
     - Custom Exceptions can also be created
+    
+27. <b> Enum </b> :
+    - It is strongly typed value type constant
+    - Default underlying type of enum is int
+    - Default value for first element is zero and gets incremented by 1
+    - Its values can be customized
+    
+28. <b> Access Modifiers </b> :
+    - <b><i>Types and Type members </b> </i> : classes, structs, enums, delegates, interfaces are types whereas the fields, properties, methods, constructors contained inside types are called type members
+    - types can have only public and internal modifiers whereas type members can have all modifiers
+    - private : available within the containing type
+    - public :available anywhere, no restrictions
+    - protected : available within contained and derived types
+    - internal : available anywhere within the containing assembly
+    - protected internal : available to any code within which it is declared or from derived types of another assembly
    
 
