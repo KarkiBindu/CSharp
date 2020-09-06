@@ -59,7 +59,7 @@ Understanding C# from basics
      - To make int type nullable add j after int : i.e intj a = 10;
      - and to make sure to provide value when it is null we do int b == a ?? 0; This convert nullable int to non-nullable int and also it provides value 0 if the value of a is null
      
-7. <b> Data Conversion </b> :
+6. <b> Data Conversion </b> :
    - It can be converted in two ways :
      - Implicit conversion : It is done when the conversion will not result to loss of data, or throws an exception
      - Example </br> int a = 10; </br> double j = a; It is possible because there will be no loss of data or throws an exception But 
@@ -70,20 +70,20 @@ Understanding C# from basics
      - Using Convert class:
        int a = Convert.ToDouble(j);
        
-8. <b> Parse and Try Parse</b> :
+7. <b> Parse and Try Parse</b> :
    - If a string is in a string format we can use parse or try parse method for conversion.
    - Parsing tries to directly convert the string values to numerical and if it cannot then it will throw exception which will result in crashing
    - Whereas try parse first checks if the value can be converted or not, if it cannot be converted the it returns 0.
    - To avoid exception and crashing using try parse method is safe
    - Example </br> string num1 = "50"; </br> string num2 = "50ab"; </br> we can do int a = int.Parse(num1); But int a = int.Parse(num2); will throw an exception as it cannot be converted to numerical value. Hence we use int.tryParse(num2, out a);
    
-9. <b> Arrays</b> :
+8. <b> Arrays</b> :
    - An array is a collection of same datatypes.
    - It is strongly typed but it cannot grow in size once initiated.
    - It has to rely on integral indices to store or retrieve items from the array.
    - Example : </br> int[] i = new int[3];
    
-10. <b> Conditional Statements </b> :
+9. <b> Conditional Statements </b> :
     - If and If Else statement :
       - Syntax: </br>
       if(condition)</br>{ //statement }</br>else</br>{ //statement }
@@ -91,7 +91,7 @@ Understanding C# from basics
       - Syntax :
         Switch(case)</br>{</br> Case 0: </br>//statement </br> break;</br> Case 1:</br> //statement </br> break; </br> default: </br>// statement </br> break; </br> }
         
-11. <b> Loops </b> :
+10. <b> Loops </b> :
     - While Loop :
       - Syntax : </br> While(Condition)</br{//statement}
       - In while loop the code enters while loop only if the condition is true and it is repeated as long as the condition is true.
@@ -106,12 +106,12 @@ Understanding C# from basics
       - Syntax:  foreach(variableType newName in List/ArrayName ) </br>{//statement}
       - It does not need to know the amount for the loop to execute
      
-12. <b> Methods </b> :
+11. <b> Methods </b> :
     - Methods are also called functions
     - It helps to create reusable code and helps in application maintenance
     - Syntax : </br> access-modifiers return-type MethodName(parameters)</br> {//Method body}
    
-14. <b> Parameters in Methods </b> :
+12. <b> Parameters in Methods </b> :
     - Value parameters : 
       - It creates a copy of the parameter passed to the method, so modification of parameter in method, does not affect the variable 
       - Example: </br> public int Sum (int a, int b)</br>{</br> return a+b; </br>}</br> a and b are value parameters</br>
@@ -127,7 +127,7 @@ Understanding C# from basics
       - Arrays or list of variable can also be passed as parameter on a method
       - Example : </br> public int Sum (List<int> numbers)</br>{</br> return numbers[0] + numbers[1]; </br>}</br>
       
-15. <b> Classes </b> :
+13. <b> Classes </b> :
     - It contains data and behaviors
     - Data is represented by field and behaviour is represented by methods
     - It is used to creare complex custom types.
@@ -135,40 +135,40 @@ Understanding C# from basics
     - Constructors are used to initialize class fields and they can be overloaded by the number and types of parameter
     - Constructors are mandatory, if not provided code will genertae parameter less constructor by default
     
-    16. <b> Static and non-static members of class</b> :
+14. <b> Static and non-static members of class</b> :
     - Static members have static keyword whereas non-static members does not have static keyword
     - Static members can be easily invoked using class name without using object but to invoke non-static members object of the class is required
     - Static members always remains the same but non-static members belongs to specific instance only. i.e. there will always be one static members no matter how many objects are created but there non-static members will be equal to the instance of the class
     - Static constructor are called only once during whole program run and they are called before instance constructor
     
-17. <b>Inheritance</b> :
+15. <b>Inheritance</b> :
     - It allows code reuse, which redces time and errors
     - The common fields and properties are defined in the base class and derived class can se it without defining it in it
     - Base classes are automatically instantiated before derived class
     - Parent class constructors executes before child class constructor
     
-18. <b>Method hiding </b> :
+16. <b>Method hiding </b> :
     - If the base class and derived class have same method name and instance of derived class is made then it will hide the base method. i.e. the method of the base class will not be called.
     - If the hiding is intentional then use new keyword for the method
     - To call the base method we can use base keyword or cast derived class to base class and invoke hidden member
     
-19. <b> Polymorphism</b> :
+17. <b> Polymorphism</b> :
     - It allows to invoke derived class methods through a base class reference during runtime
     - To allow this base class must have virtual methods which are then overriden by the derived class
     - Virtual keyword indidcates that a method can be overridden in any derived class
     
-20.<b> Method overriding vs Method hiding </b>
+18.<b> Method overriding vs Method hiding </b>
     - Say base and derived class both have same print function: </br> Baceclass instance = new DerivedClass();</br> instance.Print();
     - If the function is hidden then the print method of base class is invoked
     - If the function is overriding then method of the derived class will be invoked
     
-21. <b>Function/Method Overloading </b>
+19. <b>Function/Method Overloading </b>
      - It allows class to have multiple methods with the same name but with different signature.
      - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
      - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
      - Functions' cannot be pverloaded based on return type and params modifiers
      
-22.<b>Encapsulation</b> :
+20.<b>Encapsulation</b> :
     - Making fields public will make lose the control of what gets assigned and returned
     - Properties are used for encapsulation
     - There are four types of properties:
@@ -178,7 +178,7 @@ Understanding C# from basics
        - Autoimplemented properties: get and set does not have statement
        - Example: </br> private int _id;</br> public int Id{get; set;}//auto implemented property
        
-23. <b>Struct </b> :
+21. <b>Struct </b> :
     - Just like classes struct can have private fields, public properties, constructors and methods
     - Structs are value type whereas classes are reference type
     - Structs cannot have destructors
@@ -187,7 +187,7 @@ Understanding C# from basics
     - structs cannot be sed as base to form derived class/structs
     - Syntax: </br> access-modifier struct structName</br>{}
     
-24. <b> Interfaces</b>
+22. <b> Interfaces</b>
     - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
     - It is complie time error to provide implementations for any interface members
     - Interface members are public by default and the do not allow wxplicit access modifiers.
