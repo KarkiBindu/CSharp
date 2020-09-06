@@ -162,7 +162,7 @@ Understanding C# from basics
     - If the function is hidden then the print method of base class is invoked
     - If the function is overriding then method of the derived class will be invoked
     
- 21. <b>Function/Method Overloading </b>
+21. <b>Function/Method Overloading </b>
      - It allows class to have multiple methods with the same name but with different signature.
      - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
      - Example:</br> public void Sum(int a, int b,out int sum)</br{}</br>public void Sum(doble a, double b)</br>{}
