@@ -210,4 +210,11 @@ Understanding C# from basics
     - Signature of function and delegates must match i.e parameters of function and return type
     - It is mostly used to make framework
     - It is used to make classes flexible; a class can be modified without changing its entire logic
+    
+25. <b> Multicast delegates </b> :
+    - It has reference to more than one function
+    - It invokes the method according to the invocation list, in same order that they are added
+    - All the functions pointed by multicast delegates are invoked but if the delgates have return value then the value of the last invoked method is returned
+    - + or += registers a method to a delegate
+    - - or -= unregisters a method to a delegate
 
