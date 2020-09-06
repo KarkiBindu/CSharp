@@ -215,6 +215,6 @@ Understanding C# from basics
     - It has reference to more than one function
     - It invokes the method according to the invocation list, in same order that they are added
     - All the functions pointed by multicast delegates are invoked but if the delgates have return value then the value of the last invoked method is returned
-    - + or += registers a method to a delegate
-    - - or -= unregisters a method to a delegate
+    - \+ or += registers a method to a delegate
+    - \- or -= unregisters a method to a delegate
 
