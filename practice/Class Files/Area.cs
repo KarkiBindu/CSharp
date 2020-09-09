@@ -6,7 +6,7 @@ using System.Text;
 namespace practice.Inheritance
 {
     #region  Area: base class
-    public class Area// class with public access modifier
+    public partial class Area// class with public access modifier
     {
         #region variables with protected access modifier
         //only accesible by from derived class
@@ -64,18 +64,13 @@ namespace practice.Inheritance
         {
             Console.WriteLine("Area is {0}",_area);
         }
-        #endregion
+        #endregion      
 
-        #region Method Hinding
-        public void MethodHididng()
-        {
-            Console.WriteLine("This is method hiding example Base");
-        }
-        #endregion
+        partial void partialMethodDeclaration();//cannot have access modifiers
 
-        public void LateBinding()
+        public void CallPartialMethod()
         {
-            Console.WriteLine("This is late binding example");
+            partialMethodDeclaration();
         }
     }
     #endregion

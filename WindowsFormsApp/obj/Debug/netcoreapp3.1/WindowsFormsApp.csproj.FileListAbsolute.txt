@@ -11,3 +11,6 @@ F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.Assembly
 F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.dll
 F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.pdb
 F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.genruntimeconfig.cache
+F:\fun\practice\WindowsFormsApp\bin\Debug\netcoreapp3.1\practice.dll
+F:\fun\practice\WindowsFormsApp\bin\Debug\netcoreapp3.1\practice.pdb
+F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csproj.CopyComplete

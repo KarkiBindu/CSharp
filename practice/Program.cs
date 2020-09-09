@@ -16,15 +16,19 @@ namespace practice
         {
             try
             {
-                int a = 10;
-                int b = 29;
+                int a, b;
+                Console.WriteLine("Please Enter an integer number :");
+                int.TryParse(Console.ReadLine(), out a);
+
+                Console.WriteLine("Please Enter another integer number :");
+                int.TryParse(Console.ReadLine(), out b);
 
                 #region print using Place holders
-                Console.WriteLine("{0} {1}", a, b);
+                Console.WriteLine("Entered values printed using place holders are : {0} {1} \n", a, b);
                 #endregion
 
                 #region escape sequence
-                Console.WriteLine("\"string\"");
+                Console.WriteLine("Usage of escape sequence: \"string\" \n");
                 #endregion
 
                 #region verbatim literal
@@ -33,17 +37,17 @@ namespace practice
 
                 #region ternary Operator
                 int j = (a == 10) ? 10 : 40;
-                Console.WriteLine(j);
+                Console.WriteLine("Output using ternary operator {0} \n", j);
                 #endregion
 
                 #region null coalescing operator
                 int? i = null;
                 int k = i ?? 50;
-                Console.WriteLine(k);
+                Console.WriteLine("null coalescing operator (k = i ?? 50): since i is null, k is {0}",k);
 
                 string bc = null;
                 string cd = bc ?? "ab";
-                Console.WriteLine(cd);
+                Console.WriteLine("null coalescing operator (cd = bc ?? \"ab\"): since cd is null, cd is {0} \n", cd);
                 #endregion
 
                 #region implicit data conversion
@@ -68,8 +72,9 @@ namespace practice
                 {
                     int e;
                     int.TryParse(c, out e);
-                    Console.WriteLine(e);
+                    Console.WriteLine("Try parse conversion output {0}",e);
                 }
+                Console.WriteLine("");
                 #endregion
 
                 #region Object Instantiation of a class/ polymorphism
@@ -86,6 +91,8 @@ namespace practice
                 square.GetArea();//it is not madatory to catch returned value
                 square.PrintArea();
                 square.MethodHididng();// casting to base type to call base method
+                square.CallPartialMethod();
+                Console.WriteLine("");
                 #endregion
 
                 #region enums, struct, aliases, static members
@@ -96,6 +103,7 @@ namespace practice
                 vehicle.SetInfo((int)info[0], out category);//calling non-static memeber //casting object to int as argument
                 info[1] = category;
                 Vehicle.PrintInfo(info);//calling satic member directly from class
+                Console.WriteLine("");
                 #endregion
 
                 #region Interface
@@ -106,6 +114,7 @@ namespace practice
                 student.LastName = "Sal";
                 student.Grade = 8;
                 student.PrintInfo();
+                Console.WriteLine("");
                 #endregion
 
                 #region delegates            
@@ -125,34 +134,62 @@ namespace practice
                 Delegates.IsPromotable isSalaryPromotable = new Delegates.IsPromotable(Delegates.Employee.SalaryPromote);
                 Delegates.Delegate.PromoteEmployee(employees, isSalaryPromotable);
 
-                Console.WriteLine("Delegates: multicast delegate register, checks both salary and experience----------------------------------------------------");
+                Console.WriteLine("Delegates: multicast delegate register, checks both salary and experience----------------------------------");
                 Delegates.IsPromotable multiCastDelegate = isSalaryPromotable + isExperiencePromotable;// returns value of second type only
                 Delegates.Delegate.PromoteEmployee(employees, multiCastDelegate);
 
                 Console.WriteLine("Delegates: multicast delegate unregister, checks only salary----------------------------------------------------");
                 Delegates.IsPromotable multiCastDelegateUnRegis = multiCastDelegate - isExperiencePromotable;// returns value of second type only
                 Delegates.Delegate.PromoteEmployee(employees, multiCastDelegateUnRegis);
-
+                Console.WriteLine("");
                 #endregion
 
                 #region Access Modifiers
+                Console.WriteLine("AccessModifiers ----------------------------------------------------");
                 AccessModifiers.AccessModifier.Example example = new AccessModifiers.AccessModifier.Example();
                 //example.NoAccess();//cannot access
                 example.EverWhereAccess();
                 example.AssemblyDerivedClassAccess();
                 example.AssemblyAccess();
                 //example.DerivedClassAccess();//can be accessed from derived class only
+                Console.WriteLine("");
+                #endregion
+
+                #region Generics
+                Console.WriteLine("Generics ----------------------------------------------------");
+                Console.WriteLine("Generic int check with AreEqual function, Result : {0}",Generics.Generic.AreEqual<int>(10, 20));
+                Console.WriteLine("Generic string check with AreEqual function, Result : {0} \n", Generics.Generic.AreEqual<string>("ab", "ab"));
+                
+                #endregion
+
+                #region Indexers
+                Console.WriteLine("Indexers ----------------------------------------------------");
+                Indexers.Indexer.Company company = new Indexers.Indexer.Company();               
+                Console.WriteLine("Employee of id 15 is {0}", company[15]);
+                Console.WriteLine("Gender of employee of id 15 is {0}", company[company[15]]);
+                company[15] = "Harry";
+                Console.WriteLine("Name of Employee of id 15 after changing name is {0}", company[15]);
+                company[company[15]] = "Female";
+                Console.WriteLine("Name of Employee of id 15 after changing name is {0} \n", company[company[15]]);
+                #endregion
+
+                #region Optional parameters
+                Console.WriteLine("sum of optional parameter using params Array :");
+                Console.WriteLine("providing only two numbers {0}",Parameters.OptParameters.AddNumbers(12, 11));
+                Console.WriteLine("providing only four numbers {0} \n", Parameters.OptParameters.AddNumbers(12, 11, 13, 14));
+                Console.WriteLine("sum of optional parameter using Method overloading :");
+                Console.WriteLine("providing only three numbers {0} \n", Parameters.OptParameters.AddNumbers(12, 11, new int[1] { 12}));
+                Console.WriteLine("sum of optional parameter using default :");
+                Console.WriteLine("providing only four numbers (two default 20 and 30) {0}", Parameters.OptParameters.AddNumbers(12, 11));
+                Console.WriteLine("providing only four numbers (one default and changing one default value to 10) {0} \n", Parameters.OptParameters.AddNumbers(12, 11, c: 10));
+                Console.WriteLine("sum of optional parameter using optional attribute :");
+                Console.WriteLine("sum of two numbers providing only one value 12 {0} \n", Parameters.OptParameters.AddNumbers(12));
                 #endregion
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error");
             }
-
-
-
-
-
         }
     }
 }

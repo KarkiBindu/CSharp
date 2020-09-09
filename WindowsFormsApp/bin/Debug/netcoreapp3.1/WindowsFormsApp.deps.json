@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "WindowsFormsApp/1.0.0": {
+        "dependencies": {
+          "practice": "1.0.0.0"
+        },
         "runtime": {
           "WindowsFormsApp.dll": {}
+        }
+      },
+      "practice/1.0.0.0": {
+        "runtime": {
+          "practice.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -16,6 +27,11 @@
   "libraries": {
     "WindowsFormsApp/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "practice/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -16,14 +16,15 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
-            //string path = System.IO.Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + @"\practice.dll";          
+            //string path = System.IO.Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + @"\practice.dll";
             //Assembly trial = Assembly.LoadFrom(path);
             //Type areaType = trial.GetType("practice.Inheritance.Area");
-            //object area = Activator.CreateInstance(areaType);           
+            //object area = Activator.CreateInstance(areaType);
             //MethodInfo GetArea = areaType.GetMethod("LateBinding");
             //object[] sth = new object[1] { (object)string.Empty };
             //object ar = GetArea.Invoke(GetArea, sth);
 
+            #region access modifiers from different assembly
             practice.AccessModifiers.AccessModifier.Example example = new practice.AccessModifiers.AccessModifier.Example();
             //example.NoAccess();//cannot access
             example.EverWhereAccess();
@@ -31,12 +32,17 @@ namespace WindowsFormsApp
             //example.AssemblyAccess();//cannot be accessed
             //example.DerivedClassAccess();//can be accessed from derived class only
 
-            #region default code
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            AnotherExample derivedClass = new AnotherExample();
+            derivedClass.AssemblyDerivedClassAccess();
+            derivedClass.DerivedClassAccess();
             #endregion
+
+            //#region default code
+            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+            //#endregion
 
 
         }
@@ -44,9 +50,14 @@ namespace WindowsFormsApp
 
     public class AnotherExample : practice.AccessModifiers.AccessModifier.Example
     {
-        //internal void AssemblyDerivedClassAccess()
-        //{
+        public new void AssemblyDerivedClassAccess()
+        {
+            base.AssemblyDerivedClassAccess();
+        }
 
-        //}
+        public new void DerivedClassAccess()
+        {
+            base.DerivedClassAccess();
+        }
     }
 }

@@ -7,3 +7,7 @@ F:\fun\practice\practice\obj\Debug\netcoreapp3.1\practice.AssemblyInfoInputs.cac
 F:\fun\practice\practice\obj\Debug\netcoreapp3.1\practice.AssemblyInfo.cs
 F:\fun\practice\practice\obj\Debug\netcoreapp3.1\practice.dll
 F:\fun\practice\practice\obj\Debug\netcoreapp3.1\practice.pdb
+F:\fun\practice\practice\bin\Debug\netcoreapp3.1\practice.exe
+F:\fun\practice\practice\bin\Debug\netcoreapp3.1\practice.runtimeconfig.json
+F:\fun\practice\practice\bin\Debug\netcoreapp3.1\practice.runtimeconfig.dev.json
+F:\fun\practice\practice\obj\Debug\netcoreapp3.1\practice.genruntimeconfig.cache
