@@ -7,6 +7,8 @@ using area = practice.Inheritance.Area;
 using practice.Inheritance;
 using practice.Automobiles;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace practice
 {
@@ -185,11 +187,120 @@ namespace practice
                 Console.WriteLine("sum of optional parameter using optional attribute :");
                 Console.WriteLine("sum of two numbers providing only one value 12 {0} \n", Parameters.OptParameters.AddNumbers(12));
                 #endregion
+
+                #region Dictionary              
+                Collections.Collection.Employess = employees.ToDictionary(emp => emp.ID, emp => emp);//list to dictionary conversion
+                Delegates.Employee emp11;
+                Collections.Collection.Employess.TryGetValue(11, out emp11);
+                if(!string.IsNullOrEmpty(emp11.Name))
+                {
+                    Console.WriteLine("Employee with id 11 is found using TryGetValue");
+                }
+                else
+                    Console.WriteLine("Employee with id 11 is not found using TryGetValue");
+                Console.WriteLine("The total items in dictionary whose name starts with S is {0} \n", Collections.Collection.Employess.Count(employees => employees.Value.Name.StartsWith('S')));
+                #endregion
+
+                #region List
+                List<Delegates.Employee> lowSalaryEmp = employees.FindAll(emp => emp.Salary <= 5000);
+                Console.WriteLine("List FindAll example: employees with salary less than 5000 are :");
+                foreach (Delegates.Employee empl in lowSalaryEmp)
+                {
+                    Console.WriteLine(empl.Name);
+                }
+
+                Console.WriteLine("Before sorting customer of complex type on the base of name using default class interface IComparable :");
+                foreach (Delegates.Employee empl in employees)
+                {
+                    Console.WriteLine(empl.Name);
+                }
+
+                employees.Sort();
+                #region using delegate to Sort
+                // employees.Sort(delegate (Delegates.Employee x, Delegates.Employee y) { return x.Name.CompareTo(y.Name); });
+                #endregion
+                #region using lambda expression to sort
+                //employees.Sort((x, y) => x.Name.CompareTo(y.Name));
+                #endregion
+                Console.WriteLine("After sorting customer of complex type :");
+                foreach (Delegates.Employee empl in employees)
+                {
+                    Console.WriteLine(empl.Name);
+                }
+
+                Console.WriteLine("Before sorting customer of complex type on the base of salary using custom class interface IComparer :");
+                foreach (Delegates.Employee empl in employees)
+                {
+                    Console.WriteLine(empl.Salary);
+                }
+
+                SortEmployeeBySalary SortEmpSal = new SortEmployeeBySalary();
+                employees.Sort(SortEmpSal);
+
+                Console.WriteLine("After sorting customer of complex type :");
+                foreach (Delegates.Employee empl in employees)
+                {
+                    Console.WriteLine(empl.Salary);
+                }
+
+                Console.WriteLine("Result of check whether salary of all employee is greater than 5k using TrueForAll : {0}", employees.TrueForAll(x => x.Salary > 5000));
+
+                ReadOnlyCollection<Delegates.Employee> readOnlyEmp = employees.AsReadOnly();
+
+                Console.WriteLine("Capacity of employee list before trimming : {0}", employees.Capacity);
+                employees.TrimExcess();
+                Console.WriteLine("Capacity of employee list after trimming : {0} \n", employees.Capacity);
+
+                #endregion
+
+                #region Queue
+                Queue<Delegates.Employee> empQueue = new Queue<Delegates.Employee>();
+                empQueue.Enqueue(new Delegates.Employee { ID = 1, Name = "Yeti", Salary = 5000, Experience = 1 });
+                empQueue.Enqueue(employees[0]);
+                empQueue.Enqueue(Collections.Collection.Employess[11]);
+                empQueue.Enqueue(new Delegates.Employee { ID = 5, Name = "Amla", Salary = 5000, Experience = 2 });
+                Console.WriteLine("First Employee in queue before dequeue is : {0}", empQueue.Peek().Name);
+                empQueue.Dequeue();
+                Console.WriteLine("First Employee in queue after dequeue is : {0} \n", empQueue.Peek().Name);
+                bool contains = empQueue.Contains(employees[0]);
+                #endregion
+
+                #region Stack
+                Stack<Delegates.Employee> empStack = new Stack<Delegates.Employee>();
+                empStack.Push(new Delegates.Employee { ID = 1, Name = "Yeti", Salary = 5000, Experience = 1 });
+                empStack.Push(employees[0]);
+                empStack.Push(Collections.Collection.Employess[11]);
+                empStack.Push(new Delegates.Employee { ID = 5, Name = "Amla", Salary = 5000, Experience = 2 });
+                Console.WriteLine("Top Employee in stack before pop is : {0}", empStack.Peek().Name);
+                empStack.Pop();
+                Console.WriteLine("Top Employee in stack after pop is : {0} \n", empStack.Peek().Name);
+                bool containsEmp = empStack.Contains(employees[0]);
+                #endregion
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error");
             }
         }
+
+        #region Creating custom class to sort complex list
+        public class SortEmployeeBySalary: IComparer<Delegates.Employee>
+        {
+            public int Compare(Delegates.Employee x, Delegates.Employee y)
+            {
+                #region Salary Comparison for sorting
+                int a = 0;
+                if (x.Salary > y.Salary)
+                    a = 1;
+                else if (x.Salary < y.Salary)
+                    a = -1;
+                else if (x.Salary == y.Salary)
+                    a = 0;
+                return a;
+                #endregion
+            }
+        }
+        #endregion
     }
 }

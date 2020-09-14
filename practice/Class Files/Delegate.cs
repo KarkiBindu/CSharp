@@ -5,12 +5,22 @@ using System.Text;
 namespace practice.Delegates
 {
     public delegate bool IsPromotable(Employee emp);
-    public struct Employee
+    public struct Employee:IComparable<Employee>
     {
         public int ID { get; set; }
         public double Salary { get; set; }
         public string Name { get; set; }
         public int Experience { get; set; }
+
+        #region soting of complex types list
+        //sorting employee using salary
+        public int CompareTo(Employee emp)
+        {
+            return this.Name.CompareTo(emp.Name);
+            //if salary was an integer we can simply do
+            // return this.Salary.CompareTo(emp.Salary); // as integer implementation is already done
+        }
+        #endregion
 
         public static bool ExperiencePromote(Employee emp)
         {
