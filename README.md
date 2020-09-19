@@ -243,5 +243,63 @@ Source :
     - protected : available within contained and derived types
     - internal : available anywhere within the containing assembly
     - protected internal : available to any code within which it is declared or from derived types of another assembly
-   
-
+    
+29. <b> Early binding vs Late binding </b> :
+    - Early binding means access/detect the methods, variables and propeties at compile time whereas late binding allows only at runtime
+    - Early binding can flag errors at complie time But there is risk of run time exceptions with late binding
+    - Early binding is better for perfomance and ease development
+    - Late binding shold be used only when working with objects that are not available at compile time
+    
+30. <b> Reflection </b> :
+    - Reflection is the ability of inspecting an assemblies'metadata at runtime
+    - It is used to find all types in and assembly and/or dynamically invoke methods in an assembly (i.e. late binding)
+    
+31. <b> Generics </b> :
+    - It allows to create methods and classes decoupled from the data types
+    - It makes code type independent and increase the reusability based on datatype
+    - Example : </br> public static bool AreEqual( <T> value1, <T> value2)</br>{</br> return value1.Equals(value2); </br>}</br>
+    - T can be int, string, double etc as required and will work correctly for any of it
+    
+32. <b> Partial Classes </b> :
+    - It allows to divide a single class file into two or more class files
+    - Example is Form.cs and Form.Designer.cs of windows form application
+    
+33. <b> Partial Methods </b> :
+    - Partial method is contained on partial class or structs
+    - These are private by default
+    - Implementation and declaration are done in seperate file else it is compile time error
+    - Providing access modifier also creates compile time error
+    
+34. <b> Indexers </b> :
+    - It allows instance of class to be indexed just like arrays
+    - Creating Indexers : </br> 1. Use "this" keyword to create an indexer </br> 2. Just like properties indexers have get and set accessors </br> 3. Indexers can be overloaded
+    - Example</br> public string this[int value]{ get; set;}
+    
+35. <b> Dictionary </b> :
+    - It is a collection of key, value pair
+    - It is present System.Collections.Generic class
+    - Syntax : Dictionary<keytype, valurtype>
+    
+36. <b> List </b> :
+    - It is also present in System.Collections.Generic class
+    - It is a collection of same datatype
+    - It grows automatically unlike arrays
+    
+37. <b> Sorting List of complex types </b> :
+    - Modification of IComparable interface and providing implementation for CompareTo() function
+    - CompareTo() method return integer : </br> 1. Greater than zero : the current instance is greater than the object being compared </br> 2. Less than zero : the current instance is less than the value being compared </br> 3. Is zero : the crrent instance is equal to zero
+    - Another way is to provide custom implementation using Icomparer interface
+    - They can also be sorted using delegate or lambda expression
+    
+38. <b> Queue </b> :
+    - It is generic FIFO(First In First Out) collection class
+    - Enqueue() is sed to add to the queue
+    - Dequeue() is used to removed the item
+    - Contains() is used to check if an item is present in queue or not
+    - Peek() returns the first entered object, readonly
+    
+39. <b> Stack </b> :
+    - Stack is LIFO(Last In Fist Out) collection class
+    - Push() is used to enter data into stack
+    - Pop() is used to remove data from stack
+    - Peek() returns the last entered object, read only
