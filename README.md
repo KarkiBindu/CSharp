@@ -258,7 +258,7 @@ Source :
     - It allows to create methods and classes decoupled from the data types
     - It makes code type independent and increase the reusability based on datatype
     - Example : </br> public static bool AreEqual( <T> value1, <T> value2)</br>{</br> return value1.Equals(value2); </br>}</br>
-    - T can be int, string, double etc as required and will work correctly for any of it
+    - In above example T can be int, string, double etc as required and will work correctly for any of it
     
 32. <b> Partial Classes </b> :
     - It allows to divide a single class file into two or more class files
