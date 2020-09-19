@@ -9,11 +9,18 @@ using practice.Automobiles;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
+
+using multiThreads = practice.MultiThreading.MultiThreads;
+using practice.Deadlocks;
+using practice.Delegates;
 
 namespace practice
 {
+   
     class Program // class with private acces modifier
     {
+        static int _total = 0;
         static void Main(string[] args) // method with private access modifier
         {
             try
@@ -277,6 +284,131 @@ namespace practice
                 bool containsEmp = empStack.Contains(employees[0]);
                 #endregion
 
+                #region MultiThreading
+                Console.WriteLine("Thread implmentaion to print numbers Thread  1 :");
+                Thread t1 = new Thread(MultiThreading.MultiThreads.PrintNumbers);
+                t1.Start();
+                t1.Join();  //used to let t1 finish
+
+                Console.WriteLine("Enter target number, please enter 5");
+                int target;
+                int.TryParse(Console.ReadLine(), out target);
+
+                #region Supplying data to thread
+                Console.WriteLine("Thread implmentaion to print numbers by provoiding parameters to delegate using ParameterizedThreadStart Thread 2:");                
+                ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(MultiThreading.MultiThreads.PrintNumbersUptoTarget);
+                Thread t2 = new Thread(parameterizedThreadStart);
+                t2.Start(target);
+
+                Thread.Sleep(50);//used to let t2 finish
+
+                Console.WriteLine("Making thread type safe using encapsulation : Thread 3");
+                multiThreads.Numbers numbers = new multiThreads.Numbers(target);
+                Thread t3 = new Thread(numbers.PrintNumbersUptoTarget);
+                t3.Start();
+                if (t3.Join(1))
+                    Console.WriteLine("Thread 3 completed in 1 sec");
+                else
+                    Console.WriteLine("Thread 3 did not complete in 1 sec; check using join, this is printed before actual working of thread 3 as it is in main thread and time limit for thread completion is very short so main thread continues");
+                if (t3.Join(20))
+                    Console.WriteLine("Thread 3 completed in 20 sec; check using join, this is also in main thread but gets printed after thread 3 completion as thread process completes in 20 sec");
+                else
+                    Console.WriteLine("Thread 3 did not complete in 20 sec");
+                #endregion
+
+                #region retrieving data from thread using callback method               
+                multiThreads.SumofNumbersCallBack sumofNumbersCallBack = new MultiThreading.MultiThreads.SumofNumbersCallBack(printSumofNumbers);
+                multiThreads.SumofNumbers sumofNumbers = new MultiThreading.MultiThreads.SumofNumbers(target, sumofNumbersCallBack);
+                Thread t4 = new Thread(new ThreadStart(sumofNumbers.PrintSumUptoTarget));
+                t4.Start();
+                do
+                {
+                    Console.WriteLine("Thread 4 is alive");
+                } while (t4.IsAlive);
+                if(!t4.IsAlive)
+                    Console.WriteLine("Thread 4 is completed");
+
+                #region Adding million from main thread
+                _total = 0;
+                AddMillion();
+                AddMillion();
+                AddMillion();
+                Console.WriteLine("The total value after calling AddMillion() method 3 times from main thread is : {0}", _total);
+                #endregion
+
+                #region Adding million using worker thread
+                _total = 0;
+                Thread t5 = new Thread(AddMillion);               
+                Thread t6 = new Thread(AddMillion);               
+                Thread t7 = new Thread(AddMillion);
+                t5.Start();
+                t6.Start();
+                t7.Start();
+                t5.Join();
+                t6.Join();
+                t7.Join();
+                Console.WriteLine("The total value after calling AddMillion() method 3 times from 3 different thread is {0}, which is different and not correct most of the time", _total);                
+                #endregion
+
+                #region adding million using Interlocked increment
+                _total = 0;
+                t5 = new Thread(AddMilInterlockedIncrement);
+                t6 = new Thread(AddMilInterlockedIncrement);
+                t7 = new Thread(AddMilInterlockedIncrement);
+                t5.Start();
+                t6.Start();
+                t7.Start();
+                t5.Join();
+                t6.Join();
+                t7.Join();
+                Console.WriteLine("The total value after calling AddMillion() method 3 times from 3 different thread using Interlocked increment {0}", _total);
+                #endregion
+
+                #region adding million using Lock
+                _total = 0;
+                t5 = new Thread(AddMilLock);
+                t6 = new Thread(AddMilLock);
+                t7 = new Thread(AddMilLock);
+                t5.Start();
+                t6.Start();
+                t7.Start();
+                t5.Join();
+                t6.Join();
+                t7.Join();
+                Console.WriteLine("The total value after calling AddMillion() method 3 times from 3 different thread using Lock {0} \n", _total);
+                #endregion
+                #endregion
+
+                #endregion
+
+                #region Deadlock
+                Console.WriteLine("Main thread started");
+                Deadlock.Account accountA = new Deadlock.Account(100, 5000);
+                Deadlock.Account accountB = new Deadlock.Account(101, 3000);
+                Deadlock.AccountManager accountManagerA = new Deadlock.AccountManager(accountA, accountB, 1000);
+                t1 = new Thread(accountManagerA.Transfer);
+                t1.Name = "Thread 1";
+
+                Deadlock.AccountManager accountManagerB = new Deadlock.AccountManager(accountB, accountA, 2000);
+                t2 = new Thread(accountManagerB.Transfer);
+                t2.Name = "Thread 2";
+
+                t1.Start();
+                t2.Start();
+                
+                t1.Join();
+                t2.Join();
+
+                Console.WriteLine("Mainthread completed \n");
+                #endregion
+
+                Func<Employee, string> selector = emp => "Name : " + emp.Name;
+                IEnumerable<string> names = employees.Select(selector);
+                foreach(string name in names)
+                {
+                    Console.WriteLine(name);
+                }
+
             }
             catch (Exception e)
             {
@@ -299,6 +431,47 @@ namespace practice
                     a = 0;
                 return a;
                 #endregion
+            }
+        }
+        #endregion
+
+        #region callback function
+        public static void printSumofNumbers(int sum)
+        {
+            Console.WriteLine("The sum of numbers retrieved from callback method is {0}; Thread 4", sum);
+        }
+        #endregion
+
+        #region AddMillion
+        public static void AddMillion()
+        {
+            for(int i = 1; i <= 1000000; i++)
+            {
+                _total++;
+            }
+        }
+        #endregion
+
+        #region AddMillion Interlocked Increment
+        public static void AddMilInterlockedIncrement()
+        {
+            for (int i = 1; i <= 1000000; i++)
+            {
+                Interlocked.Increment(ref _total);
+            }
+        }
+        #endregion
+
+        static object _lock = new object();
+        #region AddMillion Lock
+        public static void AddMilLock()
+        {
+            for (int i = 1; i <= 1000000; i++)
+            {
+                lock (_lock)
+                {
+                    _total++;
+                }
             }
         }
         #endregion

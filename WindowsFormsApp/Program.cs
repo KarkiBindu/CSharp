@@ -37,12 +37,12 @@ namespace WindowsFormsApp
             derivedClass.DerivedClassAccess();
             #endregion
 
-            //#region default code
-            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            //#endregion
+            #region default code
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());            
+            #endregion
 
 
         }

@@ -14,3 +14,5 @@ F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.genrunti
 F:\fun\practice\WindowsFormsApp\bin\Debug\netcoreapp3.1\practice.dll
 F:\fun\practice\WindowsFormsApp\bin\Debug\netcoreapp3.1\practice.pdb
 F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csproj.CopyComplete
+F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.Form1.resources
+F:\fun\practice\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csproj.GenerateResource.cache
