@@ -309,8 +309,8 @@ Source :
     - <b><i>Thread : </b></i> A thread is a light weight process. Every process has atleast one thread called as main thread which executes the application code. A single process can have multiple threads.
    - Threads are used for concurrent processing utilising the multicore processor
    - <b> Advantages : </b> </br> 1. To maintain responsive User Interface </br> 2. To make efficient use of processor time while waiting I/O operations to complete </br> 3. To split large CPU  bound tasks to be processed simultaneously on a machine that has multiple processor/core
-   -<b> Disadvantages : </b> </br> 1. On a single processor/core multi threading can affect program negatively as there is overhead involved with context-sitching</br>2. More lines of code is required to accomplish same task(without using multi threading)</br> 3. Multi threaded applications are difficult to write understand, debug and maintain
-   - Syntax : </br > 1> Simple: <b><i> Thread</b></i> t = new <b><i> Thread</b></i>(functionName); </br> 2. <b><i> Thread</b></i> t = new <b><i> Thread</b></i>(<b><i> new ThreadStart</b></i>(function));</br> 3.<b><i> Thread</b></i> t = new <b><i> Thread</b></i>(<b><i> delegate()</b></i>{function(); });
+   - <b> Disadvantages : </b> </br> 1. On a single processor/core multi threading can affect program negatively as there is overhead involved with context-sitching</br>2. More lines of code is required to accomplish same task(without using multi threading)</br> 3. Multi threaded applications are difficult to write understand, debug and maintain
+   - Syntax : </br > 1. Simple: <b><i> Thread</b></i> t = new <b><i> Thread</b></i>(functionName); </br> 2. <b><i> Thread</b></i> t = new <b><i> Thread</b></i>(<b><i> new ThreadStart</b></i>(function));</br> 3.<b><i> Thread</b></i> t = new <b><i> Thread</b></i>(<b><i> delegate()</b></i>{function(); });
    - To start a thread use <i>t.Start();</i>
    - To let the thread complete use <i>t.Join();</i>
    - Use <b><i> ParameterizedThreadStart </b></i> to pass data into the thread, but it is not type safe 
