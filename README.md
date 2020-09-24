@@ -314,3 +314,24 @@ Source :
       - To start a thread use <i>t.Start();</i>
       - To let the thread complete use <i>t.Join();</i>
       - Use <b><i> ParameterizedThreadStart </b></i> to pass data into the thread, but it is not type safe 
+      - To make a threa type safe; encapsulate the thread fnction and data it needs in a helper class and se the thread start delegate to execute the function
+      - To retrieve data from thread callback methods can be used
+      
+41. <b> Thread.Join & Thread.IsAlive </b> :
+    - Join blocks the current thread and makes it wait until the thread on which join is invoked completes, timeout can also be specified for join
+    - IsAlive checks whether the thread has completed is execution or not, returns true if completed else returns false
+    
+42. <b> Protecting shared resources </b> :
+    - Operators like --, ++ are not thread safe and its behaviour is inconsistent inside a thread
+    - To solve it Either <b><i>Interlocked</b></i> or <b><i>Lock</b></i> fncitionaities are used
+    - Performance wise interlocked fuunctionality is good but it has very limited options to increment, decrement, add or read for int and long only whereas lock is versatile
+    
+43. <b> DeadLocks </b> :
+    - While using multithreading deadlocks can occour; example: Lets say there are two resorces(r1, r2) required for thread t1 and t2 to perform certain task and t1 locked r1 and t2 locked r2, since both thread requires both resources and both resources have been locked by separate thread the task cannot be completed and deadlock occurs
+    - Deadlocks can be resolved : </br> 1. Acquiring locks in a specific order </br> 2. Mutex class </br> 3. Monitor.TryEnter() method
+    
+44. <b> Async & Await </b> :
+    - In a multi threaded program one thread might hinder the performance of another thread. for example the click method of a form requires alot of processing and it is implemented using multi threads, if nothing is done then the whole form containing the button will freeze, even resizing or moving arond cannot be done in the form whle the process is running
+    - To resolve it async and await can be used where async keyword will make methods asynchronous and await keyword specifies the sspension point which signals async method cannot continue above this point until the async method completes
+    - Async can have multiple await but not mandatory
+    - Async methods creates tasks which will be performed separately withoud hindering the main thread
