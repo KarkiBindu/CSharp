@@ -14,10 +14,10 @@ Source :
    </br><i> using SchoolEmp = Eductaion.School.Employee;</i> so that we donot have to use long fullname each time
    
 2. <b>Reading and Writing to Console</b> :
-   - </i>Console.Writeline(sting);</br>Console.Write(sting);</br>Console.Readline(sting);</br>Console.Read(sting);</br> are used to read and write from console
+   - `Console.Writeline(srting);</br>Console.Write(string);</br>Console.Readline(string);</br>Console.Read(string);`</br> are used to read and write from console
    - Read takes input from console and write provides output to console
    - Place holders' can be provided to print variable </br>
-   Example: Console.WriteLine("The full name is: {0} {1}", firstName, lastName); firstname and lastname are string arguments and {0} is placeholder for first name and {1} is placeholder for lastName
+   Example: `Console.WriteLine("The full name is: {0} {1}", firstName, lastName);` firstname and lastname are string arguments and {0} is placeholder for first name and {1} is placeholder for lastName
    
 3. <b>Buit-in Types </b> :
    - Boolean : represents true or false
