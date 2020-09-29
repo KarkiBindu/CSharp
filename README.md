@@ -94,23 +94,23 @@ Source :
         
 10. <b> Loops </b> :
     - While Loop :
-      - Syntax : </br> While(Condition)</br{//statement}
+      - Syntax : </br> While(Condition)</br>{//statement}
       - In while loop the code enters while loop only if the condition is true and it is repeated as long as the condition is true.
     - Do While Loop :
-      - Syntax : </br> Do</br> {//statement}While(condition);
+      - Syntax : </br> Do</br> {</br>//statement</br>}While(condition);
       - The code enters the loop atleast one time whether the given condition is true or not
     - For Loop:
-      - Syntax : For (Variable start value; variable end value; variable increment/decrement)</br>{//statement}
+      - Syntax :</br> For (Variable start value; variable end value; variable increment/decrement)</br>{</br>//statement</br>}
       - It requires to know the amount of the number for the loop to execute.
     - Foreach Loop:
       - It is used for lists, arrays etc. 
-      - Syntax:  foreach(variableType newName in List/ArrayName ) </br>{//statement}
+      - Syntax: </br> foreach(variableType newName in List/ArrayName ) </br>{</br>//statement</br>}
       - It does not need to know the amount for the loop to execute
      
 11. <b> Methods </b> :
     - Methods are also called functions
     - It helps to create reusable code and helps in application maintenance
-    - Syntax : </br> access-modifiers return-type MethodName(parameters)</br> {//Method body}
+    - Syntax : </br> access-modifiers return-type MethodName(parameters)</br> {</br>//Method body</br>}
    
 12. <b> Parameters in Methods </b> :
     - Value parameters : 
@@ -166,7 +166,7 @@ Source :
 19. <b> Function/Method Overloading </b> :
     - It allows class to have multiple methods with the same name but with different signature.
     - Methods can be overloaded based on number of parameters, types of parameter, kind of parameters(out, ref etc)
-    - Example:</br> public void Sum(int a, int b,out int sum)</br>{ //body }</br>public void Sum(doble a, double b)</br>{}
+    - Example:</br> public void Sum(int a, int b,out int sum)</br>{</br> //body </br>}</br>public void Sum(doble a, double b)</br>{</br>}
     - Functions' cannot be pverloaded based on return type and params modifiers
      
 20. <b>Encapsulation</b> :
@@ -186,7 +186,7 @@ Source :
     - Structs cannot have parameterless constructors
     - Structs cannot inherit from another class but can inherit from interface
     - structs cannot be sed as base to form derived class/structs
-    - Syntax: </br> access-modifier struct structName</br>{ //body }
+    - Syntax: </br> access-modifier struct structName</br>{</br> //body </br>}
     
 22. <b> Interfaces</b> :
     - Interfaces also contains properties, methods, delegates or events bt only declarations and no implementations
