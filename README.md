@@ -87,14 +87,14 @@ Source :
 9. <b> Conditional Statements </b> :
     - If and If Else statement :
       - Syntax: </br>
-      if(condition)</br>{ //statement }</br>else</br>{ //statement }
+      if(condition)</br>{</br> //statement </br>}</br>else</br>{</br> //statement </br>}
     - Switch Statement :
       - Syntax :
         Switch(case)</br>{</br> Case 0: </br>//statement </br> break;</br> Case 1:</br> //statement </br> break; </br> default: </br>// statement </br> break; </br> }
         
 10. <b> Loops </b> :
     - While Loop :
-      - Syntax : </br> While(Condition)</br>{//statement}
+      - Syntax : </br> While(Condition)</br>{</br>//statement</br>}
       - In while loop the code enters while loop only if the condition is true and it is repeated as long as the condition is true.
     - Do While Loop :
       - Syntax : </br> Do</br> {</br>//statement</br>}While(condition);
